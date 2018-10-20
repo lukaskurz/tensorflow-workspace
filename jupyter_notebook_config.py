@@ -29,3 +29,5 @@ if 'PASSWORD' in os.environ:
     c.NotebookApp.password = ''
     c.NotebookApp.token = ''
   del os.environ['PASSWORD']
+
+c.NotebookApp.token = 'c41b83686a46bc94ae03adddbae8e5270d6a1a6ce3796746'

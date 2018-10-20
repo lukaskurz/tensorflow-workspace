@@ -9,8 +9,6 @@ services:
     volumes: 
       - ./jupyter_notebook_config.py:/root/.jupyter/jupyter_notebook_config.py
       - ./src:/notebooks
-    environment: 
-      - PASSWORD=1234
     # Following two commands equal the -it in docker run -it
     stdin_open: true  # -i
     tty: true # -t
