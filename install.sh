@@ -1,3 +1,13 @@
+echo "Checking if docker is already installed..."
+if [ -x "$(command -v docker)" ]; then
+    echo "Docker already installed!"
+else
+    echo "Install docker!"
+    curl -fsSL get.docker.com -o get-docker.sh
+    sh get-docker.sh
+fi
+
+echo "Installing nvidia-docker..."
 # If you have nvidia-docker 1.0 installed: we need to remove it and all existing GPU containers
 docker volume ls -q -f driver=nvidia-docker | xargs -r -I{} -n1 docker ps -q -a -f volume={} | xargs -r docker rm -f
 sudo apt-get purge -y nvidia-docker
