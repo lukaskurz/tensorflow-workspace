@@ -1,9 +1,19 @@
 version: '2.3'
 
 services: 
-  tensorflow:
+  tensorflow-gpu:
     image: tensorflow/tensorflow:latest-gpu-py3
     runtime: nvidia
+    ports:
+      - 8888:8888
+    volumes: 
+      - ./jupyter_notebook_config.py:/root/.jupyter/jupyter_notebook_config.py
+      - ./src:/notebooks
+    # Following two commands equal the -it in docker run -it
+    stdin_open: true  # -i
+    tty: true # -t
+  tensorflow:
+    image: tensorflow/tensorflow:latest-py3
     ports:
       - 8888:8888
     volumes: 
