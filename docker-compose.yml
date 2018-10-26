@@ -1,7 +1,7 @@
 version: '2.3'
 
 services: 
-  tensorflow-gpu:
+  tensorflow:
     image: tensorflow/tensorflow:latest-gpu-py3
     runtime: nvidia
     ports:
