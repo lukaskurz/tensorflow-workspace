@@ -2,7 +2,8 @@ version: '2.3'
 
 services: 
   tensorflow:
-    image: tensorflow/tensorflow:latest-gpu-py3
+    image: tensorflow-workspace
+    build: ./docker
     runtime: nvidia
     ports:
       - 8888:8888
